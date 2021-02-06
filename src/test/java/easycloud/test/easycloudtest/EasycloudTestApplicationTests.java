@@ -1,10 +1,10 @@
-package com.registry.RegistryRest;
+package easycloud.test.easycloudtest;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class RegistryRestApplicationTests {
+class EasycloudTestApplicationTests {
 
 	@Test
 	void contextLoads() {

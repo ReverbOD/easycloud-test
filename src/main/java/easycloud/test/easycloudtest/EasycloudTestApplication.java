@@ -1,13 +1,13 @@
-package com.registry.RegistryRest;
+package easycloud.test.easycloudtest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RegistryRestApplication {
+public class EasycloudTestApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RegistryRestApplication.class, args);
+		SpringApplication.run(EasycloudTestApplication.class, args);
 	}
 
 }

@@ -8,13 +8,13 @@
 		<version>2.4.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.registry</groupId>
-	<artifactId>RegistryRest</artifactId>
+	<groupId>easycloud.test</groupId>
+	<artifactId>easycloud-test</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>RegistryRest</name>
-	<description>registry app with rest service </description>
+	<name>easycloud-test</name>
+	<description>Project test for Easycloud</description>
 	<properties>
-		<java.version>15</java.version>
+		<java.version>1.8</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
