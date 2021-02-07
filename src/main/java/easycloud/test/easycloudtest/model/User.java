@@ -5,27 +5,27 @@ import javax.persistence.*;
 @Entity
 @Table(name = "users")
 public class User {
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     private String firstName;
     private String lastName;
     private Boolean deleted;
 
-    public User() {
-    }
+    public User(){}
 
-    public User(int id, String firstName, String lastName, Boolean deleted) {
+    public User(Integer id, String firstName, String lastName, Boolean deleted) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.deleted = deleted;
     }
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public int getId() {
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

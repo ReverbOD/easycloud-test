@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+   <link rel="stylesheet" href="style.css">
+   <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body onload="retrieveUser()">
+<div>
+    <div class="container">
+        <header>
+          <h1>EasyCloud - User List</h1>
+        </header>
+
+        <button class="modal-btn" onclick="openForm()">Aggiungi Utente</button>
+
+        <div class="form-popup" id="inputForm">
+          <form action="POST" class="form-container">
+            <h1>Aggiungi Nuovo Utente</h1>
+        
+            <label for="firstName"><b>Nome</b></label>
+            <input class="text-area" type="text" placeholder="Inserisci Nome Utente" name="firstName" required>
+        
+            <label for="lastName"><b>Cognome</b></label>
+            <input class="text-area" type="text" placeholder="Inserisci Cognome Utente" name="lastName" required>
+              
+            <label for="deleted">Presente</label>
+            <input type="radio" id="true" value="1" name="deleted">
+
+            <label for="deleted">Assente</label>
+            <input type="radio" id="false" value="0" name="deleted">
+
+            <button type="submit" class="btn" onclick="createUser()">Invia</button>
+
+            <button type="button" class="btn cancel" onclick="closeForm()">Chiudi</button>
+
+          </form>
+        </div>
+
+
+        <div class="wrapper">
+          <table class="table">
+            <thead class="table-header">
+              <tr class="round-head">
+                <th class="header-element">Nome</th>
+                <th class="header-element">Cognome</th>
+                <th class="header-element">Cancellato</th>
+              </tr>
+            </thead>
+            <tbody  id="user-list">
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+      <script src="./index.js"></script>
+</body>
+</html>
