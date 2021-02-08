@@ -35,12 +35,6 @@ public class UserController {
         userService.saveUser(user);
     }
 
-    //@RequestMapping(value = "/save", method = RequestMethod.POST)
-    //public String saveUser(@ModelAttribute("user") User user) {
-    //    userService.saveUser(user);
-    //    return "redirect:/";
-    //}
-
     // Retrieve User By ID
     @GetMapping("/{id}")
     public ResponseEntity<User> get(@PathVariable Integer id) {
