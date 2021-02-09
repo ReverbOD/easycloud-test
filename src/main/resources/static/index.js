@@ -29,12 +29,41 @@ function retrieveUser() {
     });
 }
 */
-var table = new Tabulator('#tabulator-table', {
+
+var table = new Tabulator('#tabulator', {
   ajaxURL: 'http://localhost:9876/users/', //ajax URL
+  layout: 'fitColumns',
+  tooltips: true,
+  addRowPos: 'top',
+  history: true,
+  pagination: 'local',
+  paginationSize: 7,
+  movableColumns: true,
+  resizableRows: true,
   height: '311px',
   columns: [
-    { title: 'Nome', field: 'firstName' },
-    { title: 'Cognome', field: 'lastName' },
-    { title: 'Presente', field: 'deleted' },
+    { title: 'Nome', field: 'firstName', editor: 'input' },
+    { title: 'Cognome', field: 'lastName', editor: 'input' },
+    { title: 'Presente', field: 'deleted', sorter: 'boolean', editor: true },
   ],
 });
+
+document.getElementById('save').addEventListener('click', update());
+
+function update(id, data) {
+  const id = ;
+  fetch(`http://localhost:9876/users/${id}`, {
+    method: 'PUT',
+    body: JSON.stringify({
+      data,
+    }),
+  })
+    .then((response) => {
+      response.json().then((response) => {
+        console.log(response);
+      });
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+}
