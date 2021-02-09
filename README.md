@@ -6,11 +6,11 @@
 * Spring - Boot 2.4.2
 * JPA
 * Spring Web
-* Rest service (GET & POST in the Frontend, all CRUD service in the backend)
+* Rest service (GET in the Frontend, all CRUD service in the backend)
 * MySQL & MySQL Driver
 * JavaScript 
 * CSS3
-* Antares to create db & tables
+* Antares to create db
 * IntelliJ to build Backend
 * Visual Studio Code to build Frontend
 * RESTapi tested with POSTMAN
