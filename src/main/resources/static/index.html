@@ -1,30 +1,41 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-   <link rel="stylesheet" href="style.css">
-</head>
-<body onload="retrieveUser()">
-
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://unpkg.com/tabulator-tables@4.9.3/dist/css/tabulator.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body onload="retrieveUser()">
     <div class="container">
-        <header>
-          <h1>EasyCloud - User List</h1>
-        </header>
+      <header>
+        <h1>EasyCloud - User List</h1>
+      </header>
 
-        <div class="wrapper">
-          <table class="table">
-            <thead class="table-header">
-              <tr class="round-head">
-                <th class="header-element">Nome</th>
-                <th class="header-element">Cognome</th>
-                <th class="header-element">Cancellato</th>
-              </tr>
-            </thead>
-            <tbody  id="user-list">
-            </tbody>
-          </table>
-        </div>
+      <div class="wrapper">
+        <!--
+        <table class="table">
+          <thead class="table-header">
+            <tr class="round-head">
+              <th class="header-element">Nome</th>
+              <th class="header-element">Cognome</th>
+              <th class="header-element">Cancellato</th>
+            </tr>
+          </thead>
+          <tbody id="user-list"></tbody>
+        </table> -->
+
+        <!-- !tabulator -->
+        <div id="tabulator-table"></div>
+        <!-- !END Tabulator-->
+      </div>
     </div>
 
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/tabulator-tables@4.9.3/dist/js/tabulator.min.js"
+    ></script>
     <script src="./index.js"></script>
-</body>
+  </body>
 </html>

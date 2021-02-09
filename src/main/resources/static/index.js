@@ -1,3 +1,4 @@
+/*
 function retrieveUser() {
   fetch('http://localhost:9876/users/')
     .then((response) => response.json())
@@ -27,3 +28,13 @@ function retrieveUser() {
       document.getElementById('user-list').innerHTML = output;
     });
 }
+*/
+var table = new Tabulator('#tabulator-table', {
+  ajaxURL: 'http://localhost:9876/users/', //ajax URL
+  height: '311px',
+  columns: [
+    { title: 'Nome', field: 'firstName' },
+    { title: 'Cognome', field: 'lastName' },
+    { title: 'Presente', field: 'deleted' },
+  ],
+});

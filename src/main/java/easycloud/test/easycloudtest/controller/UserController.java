@@ -19,8 +19,9 @@ public class UserController {
     UserService userService;
 
     // Routes for index.html
-    @GetMapping("/home")
+    @GetMapping("/homepage")
     public String viewIndex(Model model) {
+        System.out.print("Get /homepage ");
         return "index";
     }
 
