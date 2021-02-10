@@ -32,6 +32,25 @@ function retrieveUser() {
 
 var table = new Tabulator('#tabulator', {
   ajaxURL: 'http://localhost:9876/users/', //ajax URL
+  cellEdited: function (cell) {
+    const newRow = cell._cell.row.data;
+    console.log(newRow);
+    fetch(`http://localhost:9876/users/${newRow.id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8', // Indicates the content
+      },
+      body: JSON.stringify(newRow),
+    })
+      .then((response) => {
+        response.text().then((response) => {
+          console.log(response);
+        });
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  },
   layout: 'fitColumns',
   tooltips: true,
   addRowPos: 'top',
@@ -42,16 +61,26 @@ var table = new Tabulator('#tabulator', {
   resizableRows: true,
   height: '311px',
   columns: [
+    {
+      formatter: 'rowSelection',
+      titleFormatter: 'rowSelection',
+      hozAlign: 'center',
+      headerSort: false,
+      cellClick: function (e, cell) {
+        cell.getRow().toggleSelect();
+      },
+    },
+    { title: 'id', field: 'id' },
     { title: 'Nome', field: 'firstName', editor: 'input' },
     { title: 'Cognome', field: 'lastName', editor: 'input' },
     { title: 'Presente', field: 'deleted', sorter: 'boolean', editor: true },
   ],
 });
 
-document.getElementById('save').addEventListener('click', update());
+//document.getElementById('save').addEventListener('click', update());
 
+/*
 function update(id, data) {
-  const id = ;
   fetch(`http://localhost:9876/users/${id}`, {
     method: 'PUT',
     body: JSON.stringify({
@@ -66,4 +95,4 @@ function update(id, data) {
     .catch((err) => {
       console.error(err);
     });
-}
+}*/
