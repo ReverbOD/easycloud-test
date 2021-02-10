@@ -76,23 +76,3 @@ var table = new Tabulator('#tabulator', {
     { title: 'Presente', field: 'deleted', sorter: 'boolean', editor: true },
   ],
 });
-
-//document.getElementById('save').addEventListener('click', update());
-
-/*
-function update(id, data) {
-  fetch(`http://localhost:9876/users/${id}`, {
-    method: 'PUT',
-    body: JSON.stringify({
-      data,
-    }),
-  })
-    .then((response) => {
-      response.json().then((response) => {
-        console.log(response);
-      });
-    })
-    .catch((err) => {
-      console.error(err);
-    });
-}*/
